@@ -66,17 +66,21 @@ class Derivatives():
 
     def __init__(self):
 
-        pass
+        self.selected_derivative = None
 
 
-    def DERIVATIVE(x, n):
+    def DERIVATIVE(self, x, n):
+        
+        self.selected_derivative = 'Base Derivative'
 
         y = x ** n
 
         y1 = n*(x**n-1)
 
 
-    def ARCSIN(x):
+    def ARCSIN(self, x):
+        
+        self.selected_derivative = 'Arcsin (Inverse Sine)'
 
         y = np.arcsin(x)
 
@@ -85,7 +89,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def ARCTAN(x):
+    def ARCTAN(self, x):
+        
+        self.selected_derivative = 'Arctan (Inverse Tangent)'
 
         y = np.arctan(x)
 
@@ -94,7 +100,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def COS(x):
+    def COS(self, x):
+        
+        self.selected_derivative = 'Cosine'
 
         y = np.cos(x)
 
@@ -103,7 +111,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def COT(x):
+    def COT(self, x):
+        
+        self.selected_derivative = 'CoTangent'
 
         y = scipy.special.cotdg(x)
 
@@ -112,7 +122,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def EXP(x):
+    def EXP(self, x):
+        
+        self.selected_derivative = 'Exponential'
 
         y = np.exp(x)
 
@@ -121,7 +133,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def LN(x):
+    def LN(self, x):
+        
+        self.selected_derivative = 'Natural Log'
 
         y = np.log(x)
 
@@ -130,7 +144,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def SIN(x):
+    def SIN(self, x):
+        
+        self.selected_derivative = 'Sine'
 
         y = np.sin(x)
 
@@ -139,7 +155,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def TAN(x):
+    def TAN(self, x):
+        
+        self.selected_derivative = 'Tangent'
 
         y = np.tan(x)
 
@@ -148,7 +166,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def SINH(x):
+    def SINH(self, x):
+        
+        self.selected_derivative = 'Hyperbolic Sine'
 
         y = np.sinh(x)
 
@@ -157,7 +177,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def COSH(x):
+    def COSH(self, x):
+        
+        self.selected_derivative = 'Hyperbolic Cosine'
 
         y = np.cosh(x)
 
@@ -166,7 +188,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def SECH(x):
+    def SECH(self, x):
+        
+        self.selected_derivative = 'Hyperbolic Secant'
 
         y = (1 / np.cosh(x))
 
@@ -175,7 +199,9 @@ class Derivatives():
         return(y, y1)
 
 
-    def TANH(x):
+    def TANH(self, x):
+        
+        self.selected_derivative = 'Hyperbolic Tangent'
 
         y = np.tanh(x)
 
