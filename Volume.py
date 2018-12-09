@@ -1,3 +1,45 @@
+import math
+
+import pandas as pd
+
+import numpy as np
+
+import scipy
+
+from scipy import stats, fftpack
+
+from scipy.fftpack import fft, ifft, fftfreq
+
+pd.core.common.is_list_like = pd.api.types.is_list_like
+
+import pandas_datareader as pdr
+
+from pandas_datareader import *
+
+import datetime as dt
+
+import csv
+
+import numba as nb
+
+'''
+-------------------------------------------------------------------------------------------------------------------------------------
+Volume Based Signals
+
+    *The Volume Signals Class Is Not Intended To Be An Exhaustive List of Volume Based Signals.
+    
+    **Volume Based Signals Tend To Work Best When Used As A Confirmation On TimeSeries Intervals
+
+    Currently Supported Volume Signals:
+    
+        Chaikin Oscillator  |  Price Volume Trend
+        
+        Ease of Movement    |  Volume
+        
+        On-Balance Volume   |  Volume Oscillator
+--------------------------------------------------------------------------------------------------------------------------------------
+'''
+
 class VolumeSignals():
 
     def __init__(self):
@@ -44,6 +86,17 @@ class VolumeSignals():
         eom_series['EOM_AVG'] = np.round(eom_series['EOM'].rolling(n).mean(), 3)
 
         return(eom_series)
+
+
+    def OBV(ohlc_value, volume, n, n_smooth):
+
+        df = pd.DataFrame({"Price" : ohlc_value, "Volume" : volume})
+
+        df['OBV'] = np.where(df['Price'].diff() > 0, df['Volume'].rolling(n).sum(), -df['Volume'].rolling(n).sum())
+
+        df['Line'] = df['OBV'].rolling(n_smooth).mean()
+
+        return(df)
 
 
     def PVT(self, close, volume, n):
