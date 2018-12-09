@@ -1,5 +1,5 @@
 # Python-Algorithmic-Trading-Library
-**A Library To Help Efficiently and Accurately Solve For Technical Indicators and Mathematical Functions Related To Quantitative Analysis of the Stock Market
+** A Library To Help Efficiently and Accurately Solve For Technical Indicators and Mathematical Functions Related To Quantitative Analysis of the Stock Market
 
 
 
