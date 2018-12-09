@@ -3,7 +3,63 @@
 A Library To Help Efficiently and Accurately Solve For Technical Indicators and Mathematical Functions Related To Quantitative Analysis of the Stock Market, Generate Trading Signals Through an Event Driven Backtest Engine, and Create Live Signals To Run Real Time With Python While Benefitting From C/C++ Computational speed (normally).
 
 
-## Algorithmic Trading Indicators Goals:
+
+## Algorithmic Trading Indicators Structure
+
+The signals are first broken down as either a technical indicator or formulas. Technical indicators are then
+organized by their type ex.(Bollinger Bands == Volatility Signal) and formulas are grouped together by type of 
+formulas used ex.(Inverse Fisher Transform == Bipolar Gaussian Normal Probability Distribution).
+
+Current Technical Indicators:
+
+
+#### Momentum
+Chande Momentum Oscillator (CMO)
+Momentum (MOM)
+Percentage Price Oscillator (PPO)
+Rate of Change (ROC)
+Relative Strength Index (RSI)
+Stochastic Fast/Slow (STOCH)
+
+#### Trend
+Double Exponential Moving Average (DEMA)
+Exponential Moving Average (EMA)
+Moving Average Channels (CHANNEL)
+Simple Moving Average (SMA)
+Triple Smoothed Exponetial Oscillator (TRIX)
+True Strength Index (TSI)
+
+#### Volatility
+1. Average True Range (ATR)
+2. Bollinger Bands (BOLLINGER)
+3. Commodity Channel Index (CCI)
+4. Kelter Channels (KELTER)
+5. Standard Deviation (STDEV)
+
+#### Volume
+Accumulation Distrib. Line (ADL)
+Chaikin Money Flow (CMF)
+Ease of Movement (EOM)
+On-Balance Volume (OBV)
+Price Volume Trend (PVT)
+Volume (VOLUME)
+Volume Oscillator (VO)
+
+
+
+## Signals Based On Mathematical Formulas
+
+Types: 
+
+Algebra
+Interpolation
+Matrix Math
+Multivariable Calculus
+Point Estimate Theory
+Regression (Both Machine Learning and Auto-Correlation against Indp)
+
+
+   
 
 1.  Attempting to solve all indicators in the most efficient way possible using python with the help of computing libraries
     such as numpy, scipy and many more. 
