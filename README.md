@@ -1,9 +1,6 @@
 # Python-Algorithmic-Trading-Library
-** A Library To Help Efficiently and Accurately Solve For Technical Indicators and Mathematical Functions Related To Quantitative Analysis of the Stock Market
 
-
-
-
+A Library To Help Efficiently and Accurately Solve For Technical Indicators and Mathematical Functions Related To Quantitative Analysis of the Stock Market, Generate Trading Signals Through an Event Driven Backtest Engine, and Create Live Signals To Run Real Time With Python While Benefitting From C/C++ Computational speed (normally).
 
 
 ## Algorithmic Trading Indicators Goals:
