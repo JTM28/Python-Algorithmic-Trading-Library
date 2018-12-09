@@ -29,7 +29,10 @@ class MomentumOscillators():
 
         self.selected_signal = None
 
+        
     def CMO(self, close, n):
+        
+        self.selected_signal = 'Chande Momentum Oscillator'
 
         price = np.array(close)
 
@@ -59,6 +62,8 @@ class MomentumOscillators():
 
     
     def PMO(self, close, n):
+        
+        self.selected_signal = 'Price Momentum Oscillator'
 
         decay = (2 / (n + 1))
 
@@ -73,7 +78,9 @@ class MomentumOscillators():
         return(pmo)
 
 
-    def ROC(close, n):
+    def ROC(self, close, n):
+        
+        self.selected_signal = 'Rate of Change'
 
         df = pd.DataFrame({"Close" : close})
 
@@ -84,7 +91,9 @@ class MomentumOscillators():
         return(df)
     
 
-    def RSI(close, n, n_smooth, n_roc):
+    def RSI(self, close, n, n_smooth, n_roc):
+        
+        self.selected_signal = 'Relative Strength Index'
 
         rsi_series = pd.DataFrame({"Price" : np.round(close, 2)})
 
@@ -149,8 +158,11 @@ class MomentumOscillators():
         rsi_series['ROC'] = (((rsi_series['RSI'] - rsi_series['RSI'].shift(n_roc)) / rsi_series['RSI']) * 10)
 
         return(rsi_series)
+    
 
     def STOCH(high, low, close, n, k_smooth, d_smooth):
+        
+        self.selected_signal = 'Stochastic Oscillator Fast_K / Slow_K / Slow_D'
 
         '''
         --------------------
@@ -182,7 +194,7 @@ class MomentumOscillators():
 
         return(df)
 
-    def TRIX(close, k_1, k_2, k_3):
+    def TRIX(self, close, k_1, k_2, k_3):
 
         self.selected_signal = 'Triple Smoothed EMA Oscillator'
 
@@ -198,7 +210,9 @@ class MomentumOscillators():
 
         return(df)
 
-    def TSI(close, k_1, k_2):
+    def TSI(self, close, k_1, k_2):
+        
+        self.selected_signal = 'True Strength Index'
 
         '''
         ----------------------------------------------------------
@@ -236,7 +250,7 @@ class MomentumOscillators():
 
         return(df)
 
-    def UO(close, short_n, med_n, long_n, smooth_n):
+    def UO(self, close, short_n, med_n, long_n, smooth_n):
 
         self.selected_signal = 'Ultimate Oscillator'
 
