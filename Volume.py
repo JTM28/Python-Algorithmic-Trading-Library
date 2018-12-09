@@ -45,9 +45,28 @@ class VolumeSignals():
     def __init__(self):
 
         self.selected_signal = None
-        
-        
-    
+      
+     
+   
+   def ADL(self, open, high, low, close, volume, n_adl):
+
+       self.selected_signal = 'Accumulation Distribution Line'
+
+       df = pd.DataFrame({"Open":open, "High":high, "Low":low, "Close":close, "Volume":volume})
+
+       df['Money-Flow-Mult'] = np.divide(
+
+           np.subtract(np.subtract(df['Close'], df['Low']), np.subtract(df['High'], df['Low'])), np.subtract(df['High'], df['Low']))
+
+       df['Money-Flow-Volume'] = np.multiply(df['Money-Flow-Mult'], df['Volume'])
+
+       df['ADL'] = df['Money-Flow-Volume'].rolling(n_adl).mean()
+
+       df = df.dropna().reset_index(drop=True)
+
+       return(df)
+
+           
     def CHAIKIN(high, low, close, volume, n_short, n_long):
         
         self.selected_signal = 'Chaikin Oscillator'
