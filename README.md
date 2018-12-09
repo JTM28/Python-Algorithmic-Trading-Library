@@ -4,6 +4,52 @@ A Library To Help Efficiently and Accurately Solve For Technical Indicators and 
 
 
 
+## Machine Learning Algorithms and Implemented Data Sources
+
+While any datasource that works with pandas can be easily edited to work with the algorithms, there is current support
+for Tiingo and Quandl SP-500 1 min Intervals*
+
+If Using Quandl SP_500 Intervals The os.path will need to be changed internally if the quandl data is saved to a local
+SSD or Hard Drive. 
+
+*If Using Quandal Minute Intervals Stored locally, it is recommended to save it to the local drive to make for simpler access
+
+         #Accessing Local Drive To Retrieve Quandl SP_500 1min Intervals Data
+         import os
+         
+         os_denied = True
+         
+         while os_denied == True:
+         
+            try:      
+                check_dir = os.chdir('C:\\Users\username\filename')
+                new_cwd = os.getcwd()
+                directory = os.listdir(new_cwd)
+                
+                if len(directory) > 0:
+                     os_denied = False 
+                     directory.sort()
+                     
+            except PermissionError:
+                os_denied = True
+             
+
+
+
+
+
+Current Machine Learning Types:
+
+Linear Regression Model
+   Benefits - Easy To Implement, Simple to Adjust, Allows for continuous response variable
+   Downside - Uses Best Fit Line, no exponential weighting to emphasize most current training data
+   
+Logistic Regression Model
+   Benefits - Also easy to implement and adjust, allows for binary reinforcement learning ex.(np.where(x_cond == True, 1, -1))
+   Downside - Difficult if using multiple logistic regression, difficulty finding indp. variable, limited number of outcomes
+
+
+
 ## Algorithmic Trading Indicators Structure
 
 The signals are first broken down as either a technical indicator or formulas. Technical indicators are then
