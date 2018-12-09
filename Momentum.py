@@ -1,10 +1,33 @@
+import math
+
+import pandas as pd
+
+import numpy as np
+
+import scipy
+
+from scipy import stats, fftpack
+
+from scipy.fftpack import fft, ifft, fftfreq
+
+pd.core.common.is_list_like = pd.api.types.is_list_like
+
+import pandas_datareader as pdr
+
+from pandas_datareader import *
+
+import datetime as dt
+
+import csv
+
+import numba as nb
+
+
 class MomentumOscillators():
 
     def __init__(self):
 
         self.selected_signal = None
-
-
 
     def CMO(self, close, n):
 
@@ -34,9 +57,7 @@ class MomentumOscillators():
 
         return(momentum)
 
-
-
-
+    
     def PMO(self, close, n):
 
         decay = (2 / (n + 1))
@@ -60,10 +81,8 @@ class MomentumOscillators():
 
         df['ROC-Delta'] = np.log(df['ROC'] / df['ROC'].shift(5)) * np.exp(n**5)
 
-
         return(df)
-
-
+    
 
     def RSI(close, n, n_smooth, n_roc):
 
@@ -131,9 +150,6 @@ class MomentumOscillators():
 
         return(rsi_series)
 
-
-
-
     def STOCH(high, low, close, n, k_smooth, d_smooth):
 
         '''
@@ -166,8 +182,6 @@ class MomentumOscillators():
 
         return(df)
 
-
-
     def TRIX(close, k_1, k_2, k_3):
 
         self.selected_signal = 'Triple Smoothed EMA Oscillator'
@@ -183,8 +197,6 @@ class MomentumOscillators():
         df['TRIX'] = (((df['EMA-3'] - df['EMA-3'].shift(1)) / df['EMA-3']) * 10000)
 
         return(df)
-
-
 
     def TSI(close, k_1, k_2):
 
@@ -224,12 +236,7 @@ class MomentumOscillators():
 
         return(df)
 
-
-
-
     def UO(close, short_n, med_n, long_n, smooth_n):
-
-        self.selected_signal = 'Ultimate Oscillator'
 
         self.selected_signal = 'Ultimate Oscillator'
 
