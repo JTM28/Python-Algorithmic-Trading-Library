@@ -3,11 +3,33 @@ class VolumeSignals():
     def __init__(self):
 
         self.selected_signal = None
+        
+        
+    
+    def CHAIKIN(high, low, close, volume, n_short, n_long):
+        
+        self.selected_signal = 'Chaikin Oscillator'
+
+        df = pd.DataFrame({"Price" : close})
+
+        df['MFM'] = np.round(((close - low) - (high - low)) / (high - low), 3)
+
+        df['MFV'] = np.round(df['MFM'] * volume)
+
+        df['ADL'] = np.round(df['MFM'].cumsum(), 3)
+
+        df['FAST'] = np.round(df['ADL'].ewm(span= n_short).mean(), 3)
+
+        df['SLOW'] = np.round(df['ADL'].ewm(span= n_long).mean(), 3)
+
+        df['CHAIKIN'] = np.round(df['FAST'] - df['SLOW'], 4)
+
+        return(df)
 
 
     def EOM(self, high, low, close, volume, n):
-
-        self.selected_signal = 'EOM'
+       
+        self.selected_signal = 'Eease of Movement'
 
         eom_series = pd.DataFrame({"Price" : np.round(close, 2)})
 
