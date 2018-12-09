@@ -21,17 +21,58 @@
    and basic, to actually solve for signals to trade live intraday, would require much more complex methods.
    
    **If interested in learning more about how to derive signals from the market:
-         
-         Khan Academy offers courses in areas such as linear algebra and multivariable calculus, and also in quantitative 
-         statistics and how to interpret them. These are very important concepts to understand before moving forward. 
-         For optimizing signals, learning about stochastic processes and the using of different forms of these processes 
-         such as the Ornstein Uhlenbeck to backsolve to find the most optimized form of the signal
+     Khan Academy offers courses in areas such as linear algebra and multivariable calculus, and also in quantitative 
+     statistics and how to interpret them. These are very important concepts to understand before moving forward. 
+     For optimizing signals, learning about stochastic processes and the using of different forms of these processes 
+     such as the Ornstein Uhlenbeck to backsolve to find the most optimized form of the signal
+     
+     
+ ## How To Increase Computational Speed and Efficiency Through OpenSource Projects
+ 
+ More than anything else, we will make use of the numpy and pandas import libraries everywhere throughout the library.
+ It is these projects that will allow us to run computations in c/c++ using numpy and pandas without having to go through
+ the much more frustrating process of writing c extensions.
+ 
+ 
+        #Efficient Computations in only Numpy
+
+        import numpy as np
+        
+        def ROC(df, n):
+        
+            close = np.array(df['Close'], dtype=np.float)
+            
+            roc = ((np.divide(np.subtract(close[n::1], close[0:len(close)-n:1]), close[0:len(close)-n:1]) * 100)
+            
+            return(roc)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+        
+        
          
           
  
 
 
-1. Using numpy and pandas import modules for handling all computations increases runtime speed dramatically
-
-
-Not Quite Ready To Compile The Library 
