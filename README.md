@@ -1,9 +1,15 @@
 # Python-Algorithmic-Trading-Library
 
-A Library To Help Efficiently and Accurately Solve For Technical Indicators and Mathematical Functions Related To Quantitative Analysis of the Stock Market, Generate Trading Signals Through an Event Driven Backtest Engine, and Create Live Signals To Run Real Time With Python While Benefitting From C/C++ Computational speed (normally).
+The Python Algorithmic Trading Library is a module built to help increase the development time of new trading systems and to allow more time to be spent in areas such as signal generating and processing and not on the development and implementation of the actual algorithms. This module contains over 60+ technical indicators and over 100+ mathematical formulas in areas such as digital signal processing and stochastic processes that attempt to model financial markets in both timeseries and frequency based analysis. Making use 
+of the pylab module (numpy/scipy) and pandas, the algorithms are able to run at a speed close to that of C/C++ without having to actually write it in one of those languages.
 
-~Inspired by Daniel 
 
+## Understanding the Libraries and How to Use Them
+When developing a trading system, the level of complexity one can reach is nearly infinite. This is important to remember when designing systems, since combining complex frequency signals such as a fourier transform and signals based on a Timeseries graph should not be combined unless there is an advanced understanding of the difference in these structures entering into development. 
+
+#### Digital Signal Processing
+
+Using formulas found in signal processing can be extremely helpful when converting a timeseries into a frequency to help exploit inefficiencies in the market.
 
 
 ## Machine Learning Algorithms and Implemented Data Sources
